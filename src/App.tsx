@@ -1,56 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.scss';
 
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
+import { Button, Col, Navbar, Row } from 'react-bootstrap';
+import { SiGnuprivacyguard } from 'react-icons/si';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand>Sabre Tasks</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              {/* <Nav.Link href="#home">Home</Nav.Link> */}
+              {/* <Nav.Link href="#link">Link</Nav.Link> */}
+              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown> */}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Container>
+        <Row>
+          <Col><h1>Sabre Task Manager</h1></Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button variant="primary" type="submit">
+              <SiGnuprivacyguard /> Sign-up
+            </Button>
+          </Col>
+        </Row>
+      </Container>
+      <div className="App-footer">
+        This is footer
+      </div>
     </div>
   );
 }

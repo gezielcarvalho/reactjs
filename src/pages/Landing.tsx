@@ -4,6 +4,7 @@ import { SiGnuprivacyguard } from "react-icons/si";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './dashboard-styles.scss';
 import Panel from "../components/Panel";
+import Cards from "../components/Cards";
 
 const Landing = () => {
     return (
@@ -44,7 +45,9 @@ const Landing = () => {
                 </Row>
                 <Row>
                     <Col>
-                        <Panel/>
+                        <Panel>
+                            <Cards />
+                        </Panel>
                     </Col>
                 </Row>
             </Container>

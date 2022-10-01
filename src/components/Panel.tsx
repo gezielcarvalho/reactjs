@@ -1,17 +1,19 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { FaBeer } from 'react-icons/fa';
 
-const Panel = () => {
+interface IPanelProps {
+    children: JSX.Element,
+}
+const Panel = ({children}: IPanelProps) => {
     return (
         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            {/* <Card.Img variant="top" src={image} /> */}
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title style={{ 
+                    backgroundColor: 'lightgray'
+                 }}>My Panel</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    <h3> Lets go for a <FaBeer />? </h3>
-                    bulk of the card's content.
+                    {children}
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
             </Card.Body>

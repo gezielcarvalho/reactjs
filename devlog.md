@@ -7,3 +7,5 @@ https://react-bootstrap.github.io/getting-started/introduction
 npm install react-bootstrap bootstrap
 
 npm i sass
+
+https://www.carlrippon.com/react-children-with-typescript/

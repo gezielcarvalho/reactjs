@@ -5,11 +5,19 @@ import { fetchCount } from './counterAPI';
 export interface CounterState {
   value: number;
   status: 'idle' | 'loading' | 'failed';
+  cards: any[];
+}
+
+export interface ICard {
+  id: number,
+  isEditing: boolean,
+  text: string
 }
 
 const initialState: CounterState = {
   value: 0,
   status: 'idle',
+  cards: []
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -31,6 +39,9 @@ export const counterSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
+    createCard: (state,action) => {
+      console.log(action.payload);
+    },
     increment: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
@@ -63,7 +74,7 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount, createCard } = counterSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
